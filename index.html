@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco-Erronka: Gure Ikastetxearen Erreskate Plana</title>
-    <!-- Tailwind CSS (Diseinu modernorako) -->
+    
+    <!-- Tailwind CSS eta Ikonoak -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons (Ikono politetarako) -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Gure kolore pertsonalizatuak -->
+    
+    <!-- Tailwind Konfigurazioa -->
     <script>
         tailwind.config = {
             theme: {
@@ -16,65 +17,17 @@
                     colors: {
                         eco: {
                             light: '#d1fae5',
-                            DEFAULT: '#10b981', // Emerald 500
-                            dark: '#047857',   // Emerald 700
+                            DEFAULT: '#10b981', 
+                            dark: '#047857',   
                         }
                     }
                 }
             }
         }
     </script>
-    <style>
-        /* CSS Estilo Gehigarriak (Zure style.css-ra joango direnak) */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-        }
 
-        /* Sekzioak ezkutatzeko klasea */
-        .section-hidden {
-            display: none;
-        }
-
-        /* Animazio leunak */
-        .fade-in {
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .nav-link {
-            transition: all 0.3s ease;
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px; /* Botoi borobildu modernoak (pilulak) */
-            font-weight: 500;
-        }
-
-        .nav-link:hover {
-            background-color: #d1fae5;
-            color: #047857;
-        }
-
-        .nav-link.active {
-            background-color: #10b981;
-            color: white;
-            box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.4);
-        }
-
-        /* Glassmorphism efektua menurako */
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-    </style>
+    <!-- HEMEN LOTZEN DUGU ZURE CSS FITXATEGIA -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 
@@ -147,7 +100,6 @@
         <!-- 1. HASIERA SEKZIOA -->
         <section id="hasiera" class="fade-in">
             <div class="bg-eco text-white rounded-3xl p-8 md:p-16 text-center shadow-xl relative overflow-hidden">
-                <!-- Atzealdeko elementu apaingarriak -->
                 <div class="absolute top-0 right-0 -mr-16 -mt-16 opacity-20">
                     <i data-lucide="globe" class="w-64 h-64"></i>
                 </div>
@@ -275,7 +227,6 @@
                             <i data-lucide="calculator" class="w-5 h-5"></i>
                             Kalkulagailua Ireki
                         </a>
-                        <!-- Oharra irakaslearentzat: Hemen jarriko dugu Global Footprint Network edo aukeratzen duzun kalkulagailuaren esteka -->
                     </div>
                     <div class="flex-1 bg-gray-50 p-6 rounded-xl border border-gray-200">
                         <h4 class="font-bold text-lg mb-3 border-b pb-2">Zeregina: Interdependentzia-diagrama</h4>
@@ -286,7 +237,7 @@
                             </li>
                             <li class="flex items-start gap-2">
                                 <i data-lucide="check-circle-2" class="w-5 h-5 text-eco shrink-0"></i>
-                                Paper handi batean loturak marraztu (Adib: Nire kontsumoa ➔ Garraioa ➔ CO2 isurketak).
+                                Paper handi batean loturak marraztu.
                             </li>
                             <li class="flex items-start gap-2">
                                 <i data-lucide="check-circle-2" class="w-5 h-5 text-eco shrink-0"></i>
@@ -320,16 +271,13 @@
                         <li>8 minutu dituzue arazoa konpontzeko 8 ideia ero marrazteko edo idazteko.</li>
                         <li>Taldean ideiak partekatu eta onena (edo konbinazio bat) aukeratu.</li>
                     </ol>
-                    <div class="bg-white p-4 rounded-lg text-sm border-l-4 border-yellow-400">
-                        <strong>Adibidea:</strong> Hamaiketakoen bilgarri zero lehiaketa, ur-iturri adimentsuak, edo bizikletak aparkatzeko sistema berritzailea.
-                    </div>
                 </div>
 
                 <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col justify-center">
                     <h3 class="text-xl font-bold mb-4 text-center">Formatuaren Sorkuntza</h3>
                     <div class="text-center mb-6">
                         <i data-lucide="palette" class="w-16 h-16 text-gray-300 mx-auto mb-4"></i>
-                        <p class="text-gray-600">Aukeratu duzuen DUA formatuarekin lanean hasteko ordua da (Canva, Podcast-aren gidoia, Maketa...). Banatu rolak taldean!</p>
+                        <p class="text-gray-600">Aukeratu duzuen DUA formatuarekin lanean hasteko ordua da (Canva, Podcast-aren gidoia, Maketa...).</p>
                     </div>
                     <button class="w-full bg-eco text-white py-3 rounded-lg font-bold hover:bg-eco-dark transition-colors">
                         Baliabide Digitalak Ireki
@@ -396,7 +344,6 @@
                 <i data-lucide="clipboard-check" class="text-eco"></i> Ebaluazioa eta Errubrika
             </h2>
 
-            <!-- Google Forms Estekak -->
             <div class="grid md:grid-cols-2 gap-6 mb-10">
                 <div class="bg-blue-50 rounded-xl p-6 border border-blue-100 flex items-center justify-between">
                     <div>
@@ -418,7 +365,6 @@
                 </div>
             </div>
 
-            <!-- Errubrika Sinplifikatua (Ikasleentzat ulergarria) -->
             <h3 class="text-xl font-bold mb-4">Zer ebaluatuko dugu?</h3>
             <div class="overflow-x-auto">
                 <table class="w-full text-left bg-white rounded-xl shadow-sm overflow-hidden text-sm">
@@ -465,49 +411,7 @@
         <p>1. DBH - Balio Zibiko eta Etikoen Hezkuntza - UD5</p>
     </footer>
 
-    <!-- JavaScript - Funtzioak eta Interaktibitatea (Zure script.js-ra joango dena) -->
-    <script>
-        // Ikonoak kargatzeko
-        lucide.createIcons();
-
-        // Sekzioen artean nabigatzeko funtzioa
-        function showSection(sectionId) {
-            // Ezkutatu sekzio guztiak
-            const sections = document.querySelectorAll('main > section');
-            sections.forEach(sec => {
-                sec.classList.add('section-hidden');
-            });
-
-            // Erakutsi eskatutako sekzioa
-            const activeSection = document.getElementById(sectionId);
-            if(activeSection) {
-                activeSection.classList.remove('section-hidden');
-            }
-
-            // Eguneratu menuko "active" klasea (azpimarra)
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if(link.getAttribute('data-target') === sectionId) {
-                    link.classList.add('active');
-                }
-            });
-
-            // Mugikorretan sakatzean scroll igo gora
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Mugikorretarako menua ireki/itxi
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            toggleMobileMenu();
-        });
-
-        function toggleMobileMenu() {
-            mobileMenu.classList.toggle('hidden');
-        }
-    </script>
+    <!-- HEMEN LOTZEN DUGU ZURE JAVASCRIPT FITXATEGIA -->
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
