@@ -31,7 +31,7 @@
     <!-- Zure CSS Fitxategia -->
     <link rel="stylesheet" href="./assets/css/style.css">
     
-    <!-- CSS Gehigarria badaezpada (CSS fitxategia ez bada kargatzen) -->
+    <!-- CSS Gehigarria badaezpada -->
     <style>
         .section-hidden { display: none; }
         .fade-in { animation: fadeIn 0.4s ease-in-out; }
@@ -52,7 +52,7 @@
     <!-- NABIGAZIO MENUA -->
     <nav class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center h-20"> <!-- h-20 handiagoa, espazio gehiago -->
+            <div class="flex justify-between items-center h-20">
                 <!-- Logoa / Izenburua -->
                 <div class="flex items-center gap-2 cursor-pointer" onclick="showSection('hasiera')">
                     <i data-lucide="leaf" class="text-eco h-7 w-7"></i>
@@ -78,6 +78,9 @@
                     </div>
 
                     <a onclick="showSection('ebaluazioa')" class="nav-link px-4 py-2 rounded-full cursor-pointer hover:bg-eco-light hover:text-eco-dark transition-all" data-target="ebaluazioa">Ebaluazioa</a>
+
+                    <!-- IRAKASLEAREN BOTOIA -->
+                    <a onclick="showSection('irakaslea')" class="nav-link px-4 py-2 rounded-full cursor-pointer bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold transition-all ml-2" data-target="irakaslea">Irakaslea</a>
                 </div>
 
                 <!-- Botoia (Menu txikia mugikorretarako) -->
@@ -107,15 +110,18 @@
                 </div>
 
                 <a onclick="showSection('ebaluazioa'); toggleMobileMenu()" class="block py-3 px-4 hover:text-eco rounded-xl hover:bg-eco-light transition-colors">Ebaluazioa</a>
+
+                <!-- IRAKASLEAREN BOTOIA MUGIKORREAN -->
+                <a onclick="showSection('irakaslea'); toggleMobileMenu()" class="block py-3 px-4 hover:text-slate-800 rounded-xl bg-slate-200 font-bold transition-colors">Irakaslea (Errubrika)</a>
             </div>
         </div>
     </nav>
 
     <!-- EDUKI NAGUSIA -->
-    <main class="flex-grow pt-32 pb-16 px-4 max-w-6xl mx-auto w-full"> <!-- pt-32 espazio handia goian -->
+    <main class="flex-grow pt-32 pb-16 px-4 max-w-6xl mx-auto w-full">
 
         <!-- 1. HASIERA SEKZIOA -->
-        <section id="hasiera" class="fade-in mb-24"> <!-- mb-24 sekzio artean hutsune handia uzteko -->
+        <section id="hasiera" class="fade-in mb-24">
             <div class="bg-eco text-white rounded-3xl p-8 md:p-16 text-center shadow-xl relative overflow-hidden mb-16">
                 <div class="absolute top-0 right-0 -mr-16 -mt-16 opacity-20">
                     <i data-lucide="globe" class="w-64 h-64"></i>
@@ -129,7 +135,7 @@
                 </div>
             </div>
 
-            <!-- Irudiaren Lekua (Espazio handiarekin goian eta behean) -->
+            <!-- Irudiaren Lekua -->
             <div class="my-16 rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform transition duration-500 hover:scale-[1.02]">
                 <img src="./assets/irudiak/shock-irudia.jpg" alt="2050. urtea, gure ikastetxea urpean" class="w-full h-auto object-cover max-h-[500px]">
             </div>
@@ -254,7 +260,7 @@
                                 </li>
                                 <li class="flex items-start gap-3">
                                     <i data-lucide="arrow-right" class="w-5 h-5 text-eco mt-0.5 shrink-0"></i> 
-                                    <span>Amaitzean, aztertu grafikoak. Zer da gehien kontsumitzen duzuna? (Elikadura, garraioa...)</span>
+                                    <span>Amaitzean, aztertu grafikoak. Zer da gehien kontsumitzen duzuna?</span>
                                 </li>
                                 <li class="flex items-start gap-3">
                                     <i data-lucide="arrow-right" class="w-5 h-5 text-eco mt-0.5 shrink-0"></i> 
@@ -263,6 +269,7 @@
                             </ol>
                         </div>
 
+                        <!-- KALKULAGAILUAREN ESTEKA ZEHATZA -->
                         <a href="https://www.footprintcalculator.org/es/results/0/summary" target="_blank" class="inline-flex items-center gap-3 bg-gray-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-eco transition-colors shadow-lg hover:shadow-xl hover:-translate-y-1 transform duration-200">
                             <i data-lucide="calculator" class="w-6 h-6"></i>
                             Kalkulagailua Ireki
@@ -275,7 +282,7 @@
                             <span class="bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-black shadow-md">2</span> 
                             Interdependentzia-diagrama
                         </h3>
-                        <p class="text-gray-600 mb-6 text-lg leading-relaxed">Ekintza txikienek ere eragina dute planetan (dena lotuta dago!). Taldean, aukeratu ikastetxeko ohitura bat eta marraztu bere eragina.</p>
+                        <p class="text-gray-600 mb-6 text-lg leading-relaxed">Ekintza txikienek ere eragina dute planetan. Taldean, aukeratu ohitura bat eta marraztu bere eragina.</p>
                         
                         <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100">
                             <h4 class="font-bold text-blue-900 mb-4 flex items-center gap-2">
@@ -285,21 +292,21 @@
                                 <p class="font-bold text-gray-800 text-base">Ekintza: <span class="text-blue-600 font-medium">Ikasle asko autoz etortzea.</span></p>
                                 
                                 <div class="flex flex-col gap-2 pl-4 border-l-2 border-blue-300 ml-2 mt-3">
-                                    <p class="flex gap-2"><span class="font-bold text-gray-400">1.</span> Erregai fosilak (gasolina) erretzen dira.</p>
-                                    <p class="flex gap-2"><span class="font-bold text-gray-400">2.</span> CO2 eta gas kutsakorrak isurtzen dira airera.</p>
+                                    <p class="flex gap-2"><span class="font-bold text-gray-400">1.</span> Erregai fosilak erretzen dira.</p>
+                                    <p class="flex gap-2"><span class="font-bold text-gray-400">2.</span> CO2 isurtzen da airera.</p>
                                     <p class="flex gap-2"><span class="font-bold text-gray-400">3.</span> Berotegi-efektua eta tenperaturak igotzen dira.</p>
-                                    <p class="flex gap-2 mt-1"><span class="font-black text-eco-dark">4. ONDORIOA:</span> <span class="font-semibold text-gray-800">Muturreko eguraldia (uholdeak gurean!).</span></p>
+                                    <p class="flex gap-2 mt-1"><span class="font-black text-eco-dark">4. ONDORIOA:</span> <span class="font-semibold text-gray-800">Muturreko eguraldia.</span></p>
                                 </div>
                             </div>
                             <p class="mt-5 text-sm font-medium text-blue-800">
-                                👉 Aukeratu beste gai bat (plastikoak, argindarra...) eta sortu zuen diagrama errotuladoreekin paper handi batean!
+                                👉 Aukeratu beste gai bat eta sortu zuen diagrama paper handi batean!
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 1. SAIOKO IRUDI BERRIA HEMEN (diagrama.jpg) -->
+            <!-- 1. SAIOKO IRUDIA -->
             <div class="mt-8 rounded-2xl overflow-hidden shadow-lg border-2 border-gray-100 transform transition duration-500 hover:scale-[1.01]">
                 <img src="./assets/irudiak/diagrama.jpg" alt="Interdependentzia diagramaren adibidea" class="w-full h-auto object-cover max-h-[400px]">
             </div>
@@ -325,6 +332,7 @@
                     </ol>
                 </div>
 
+                <!-- DUA FORMATUEN ZERRENDA BERRIA -->
                 <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 flex flex-col justify-center hover:border-gray-300 transition-colors">
                     <div class="flex items-center justify-center gap-3 mb-2">
                         <i data-lucide="palette" class="w-8 h-8 text-eco"></i>
@@ -368,7 +376,7 @@
                 </div>
             </div>
 
-            <!-- 2. SAIOKO IRUDI BERRIA HEMEN (crazy8.jpg) -->
+            <!-- 2. SAIOKO IRUDIA -->
             <div class="mt-8 rounded-2xl overflow-hidden shadow-lg border-2 border-gray-100 transform transition duration-500 hover:scale-[1.01]">
                 <img src="./assets/irudiak/crazy8.jpg" alt="Zortzi zoroak ariketaren adibidea" class="w-full h-auto object-cover max-h-[400px]">
             </div>
@@ -492,6 +500,134 @@
             </div>
         </section>
 
+        <!-- 7. IRAKASLEAREN ERRUBRIKA (LOMLOE) -->
+        <section id="irakaslea" class="section-hidden fade-in mb-24">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-gray-800 flex items-center gap-4">
+                <div class="p-3 bg-slate-200 rounded-2xl text-slate-700"><i data-lucide="book-open" class="w-8 h-8"></i></div>
+                Irakaslearen Gida: LOMLOE eta Errubrika
+            </h2>
+
+            <!-- LOMLOE Elementuak -->
+            <div class="grid lg:grid-cols-3 gap-6 mb-12">
+                <!-- Funtsezko Gaitasunak -->
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+                    <h3 class="font-black text-lg mb-4 text-blue-700 flex items-center gap-2 border-b pb-2"><i data-lucide="target" class="w-5 h-5"></i> Funtsezko Gaitasunak</h3>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li><strong class="text-gray-800">HKK:</strong> Ahozko defentsan (Pitch) eta DUA formatuko idazketan.</li>
+                        <li><strong class="text-gray-800">STEM:</strong> Aztarna ekologikoa neurtu eta interdependentzia zientifikoa ulertzean.</li>
+                        <li><strong class="text-gray-800">EK:</strong> Berotze globalari irtenbide berritzaile bat diseinatzean.</li>
+                        <li><strong class="text-gray-800">KPSII:</strong> Talde-lanean eta Autoebaluazio/Koebaluazioan.</li>
+                        <li><strong class="text-gray-800">HK:</strong> Ingurumenarekiko erantzukizun zibikoa garatzean.</li>
+                    </ul>
+                </div>
+
+                <!-- Berariazko Gaitasunak -->
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+                    <h3 class="font-black text-lg mb-4 text-eco-dark flex items-center gap-2 border-b pb-2"><i data-lucide="award" class="w-5 h-5"></i> BG eta Irizpideak</h3>
+                    <div class="space-y-4 text-sm text-gray-600">
+                        <p><strong class="text-eco-dark">3. BG:</strong> Arazo eko-sozialekin konprometitzea.</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li><strong class="text-gray-800">3.1:</strong> Interdependentzia ulertzea.</li>
+                            <li><strong class="text-gray-800">3.2:</strong> Klima larrialdiari soluzioak proposatzea.</li>
+                            <li><strong class="text-gray-800">3.3:</strong> Ohitura jasangarriak praktikan jartzea.</li>
+                        </ul>
+                        <p><strong class="text-eco-dark mt-2 block">4. BG:</strong> Emozioak kudeatzea eta enpatia.</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li><strong class="text-gray-800">4.1:</strong> Talde-lanean emozioak osasuntsu kudeatzea.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Oinarrizko Jakintzak -->
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+                    <h3 class="font-black text-lg mb-4 text-purple-700 flex items-center gap-2 border-b pb-2"><i data-lucide="brain" class="w-5 h-5"></i> Oinarrizko Jakintzak</h3>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li><strong class="text-gray-800">A.4:</strong> Emozioen eta sentimenduen hezkuntza (talde-gatazkak).</li>
+                        <li><strong class="text-gray-800">C.1:</strong> Interdependentzia, interkonexioa eta ekodependentzia.</li>
+                        <li><strong class="text-gray-800">C.2:</strong> Planetaren mugak eta larrialdi klimatikoa.</li>
+                        <li><strong class="text-gray-800">C.5:</strong> Bizi estilo jasangarriak.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Errubrika Analitiko Zehatza -->
+            <h3 class="text-2xl font-bold mb-6 flex items-center gap-2"><i data-lucide="table" class="w-6 h-6 text-slate-500"></i> Errubrika Analitiko Zehatza</h3>
+            <div class="overflow-x-auto rounded-2xl shadow-sm border border-slate-200 mb-8">
+                <table class="w-full text-left bg-white text-sm">
+                    <thead class="bg-slate-800 text-white">
+                        <tr>
+                            <th class="p-4 w-1/5 font-bold">Irizpidea</th>
+                            <th class="p-4 w-1/5 font-bold bg-green-600">BIKAIN (4 Puntu)</th>
+                            <th class="p-4 w-1/5 font-bold bg-blue-600">OSO ONDO (3 Puntu)</th>
+                            <th class="p-4 w-1/5 font-bold bg-yellow-600">NAHIKO (2 Puntu)</th>
+                            <th class="p-4 w-1/5 font-bold bg-red-600">HOBETU BEHAR (1)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-slate-700">
+                        <!-- 3.1 -->
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-black text-slate-900 border-r border-slate-100">3.1 Interdependentzia<br><span class="text-xs font-normal text-slate-500">Aztarna eta Diagrama</span></td>
+                            <td class="p-4 leading-relaxed">Diagraman ohituren eta naturaren arteko <strong>4 lotura sakon</strong> edo gehiago eraiki dituzte, kausa-ondorioak zientifikoki argi azalduz.</td>
+                            <td class="p-4 leading-relaxed">Diagraman 2-3 lotura koherente eraiki dituzte, baina elementuren baten lotura falta da edo azalpenak sinpleagoak dira.</td>
+                            <td class="p-4 leading-relaxed">Diagraman lotura bakarra edo oso agerikoa dena jarri dute, interdependentzia kontzeptua ongi garatu gabe.</td>
+                            <td class="p-4 leading-relaxed">Ez dute giza ohituren eta ingurumenaren arteko inolako lotura logikorik identifikatu diagraman.</td>
+                        </tr>
+                        <!-- 3.2 -->
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-black text-slate-900 border-r border-slate-100">3.2 Klima Larrialdia<br><span class="text-xs font-normal text-slate-500">Soluzioaren Sorkuntza</span></td>
+                            <td class="p-4 leading-relaxed">Soluzioa <strong>oso berritzailea, bideragarria eta ikastetxera guztiz egokitua</strong> da. Eragin erreal eta positiboa luke.</td>
+                            <td class="p-4 leading-relaxed">Proposamena logikoa eta aplikagarria da, baina jatorrizko arazoaren azaleran geratzen da (ez da oso berritzailea).</td>
+                            <td class="p-4 leading-relaxed">Proposamen bat egin dute, baina ez da errealista, edo ez dituzte baliabideak kontuan hartu.</td>
+                            <td class="p-4 leading-relaxed">Ez dute soluzio zehatzik planteatu, edo ideiak ez du zerikusirik ingurumenarekin.</td>
+                        </tr>
+                        <!-- 3.3 -->
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-black text-slate-900 border-r border-slate-100">3.3 Jasangarritasuna<br><span class="text-xs font-normal text-slate-500">Ekintzarako Deia</span></td>
+                            <td class="p-4 leading-relaxed">Ikaskideak <strong>ekintzara oso eraginkorrean bultzatzen dituzte</strong>. Zergatik aldatu behar garen primeran transmititzen da.</td>
+                            <td class="p-4 leading-relaxed">Ohitura jasangarriak sustatzen ditu eta mezua argia da, baina agian ez du inpaktu sentsibilizatzaile handirik lortzen.</td>
+                            <td class="p-4 leading-relaxed">Ohitura jasangarriak aipatzen dira, baina mezua lausoa da eta ez dute azaltzen nola eraman praktikara.</td>
+                            <td class="p-4 leading-relaxed">Ez da ohitura arduratsuen mezurik transmititzen proiektuan. Helburua ez dago argi.</td>
+                        </tr>
+                        <!-- 4.1 -->
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-black text-slate-900 border-r border-slate-100">4.1 Emozioen Kudeaketa<br><span class="text-xs font-normal text-slate-500">Enpatia talde-lanean</span></td>
+                            <td class="p-4 leading-relaxed">Kideen arteko <strong>enpatia eta zaintza erabatekoak</strong> izan dira, gatazkak elkarrizketa bidez positiboki ebatziz.</td>
+                            <td class="p-4 leading-relaxed">Enpatiaz jokatu dute orokorrean. Uneren batean gatazkaren bat egon bada ere, lan giro ona mantendu dute.</td>
+                            <td class="p-4 leading-relaxed">Zailtasun nabarmenak izan dituzte frustrazioa kudeatzeko. Enpatia falta nabaritu da, emaitzari eraginez.</td>
+                            <td class="p-4 leading-relaxed">Ez dute besteen emozioekiko errespeturik erakutsi. Gatazka etengabeek giroa erabat kaltetu dute.</td>
+                        </tr>
+                        <!-- HKK -->
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-black text-slate-900 border-r border-slate-100">HKK - Euskara<br><span class="text-xs font-normal text-slate-500">Ahozkoa eta idatzizkoa</span></td>
+                            <td class="p-4 leading-relaxed">Euskararen erabilera <strong>bikaina eta naturala</strong> da. Lexiko aberatsa, gramatika akats nabarmenik gabe.</td>
+                            <td class="p-4 leading-relaxed">Euskara ongi erabili dute, lexikoa badago, nahiz eta tarteka akats gramatikal edo sintaktiko arruntak egin.</td>
+                            <td class="p-4 leading-relaxed">Ulertzen da, baina lexikoa pobrea da, erdarakadak erabiltzen dituzte edo gramatika akatsek oztopatzen dute.</td>
+                            <td class="p-4 leading-relaxed">Erabilera oso eskasa izan da, ikaskideekin zein aurkezpenean gaztelaniara jotzeko joera argia erakutsiz.</td>
+                        </tr>
+                        <!-- DUA -->
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-black text-slate-900 border-r border-slate-100">Aurkezpena / DUA<br><span class="text-xs font-normal text-slate-500">Sormena eta defentsa</span></td>
+                            <td class="p-4 leading-relaxed">Formatua <strong>sormen handiz</strong> exekutatu dute. Publikoarekin konektatu dute, galderei sendo erantzunez.</td>
+                            <td class="p-4 leading-relaxed">Formatua ongi landu dute eta argia izan da. Ez dute publikoarekin konexio berezirik lortu (testua irakurri dute).</td>
+                            <td class="p-4 leading-relaxed">Formatua oinarrizko moduan aurkeztu dute. Testua osorik irakurri dute eta galderei erantzutean zalantzak izan dituzte.</td>
+                            <td class="p-4 leading-relaxed">Ez dute formatua osatu. Aurkezpena ulertezina izan da eta ez dute galderei erantzuteko gaitasunik izan.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Kalifikazioa -->
+            <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl flex items-center justify-between">
+                <div>
+                    <h4 class="font-black text-slate-800 mb-1">📝 Nola kalkulatu azken nota?</h4>
+                    <p class="text-slate-600 text-sm">Puntuazio maximoa: <strong>24 puntu</strong> (6 irizpide x 4 puntu).</p>
+                </div>
+                <div class="bg-white px-4 py-2 rounded-xl shadow-sm border border-slate-100 font-mono text-slate-800 font-bold">
+                    (Lortutako Puntuak × 10) / 24
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- FOOTER -->
@@ -506,9 +642,8 @@
     <!-- JS Fitxategiak -->
     <script src="./assets/js/script.js"></script>
     
-    <!-- Ikonoak derrigorrez marrazteko agindua (orria kargatzean exekutatzeko) -->
+    <!-- Ikonoak derrigorrez marrazteko agindua -->
     <script>
-        // Timeout txiki bat ematen diogu ziurtatzeko lucide kargatu dela
         setTimeout(() => {
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
